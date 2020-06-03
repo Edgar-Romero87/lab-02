@@ -4,6 +4,9 @@ let allHorns = [];
 let keyword = [];
 
 
+
+
+
 function Animals(obj){
   this.image_url = obj.image_url;
   this.title = obj.title;
@@ -77,3 +80,36 @@ function filter(event){
 }
 $('#dropdown-template').on('change', filter);
 
+
+
+// function AnimalTwo(obj){
+//   this.image_url = obj.image_url;
+//   this.title = obj.title;
+//   this.description = obj.description;
+//   this.keyword = obj.keyword;
+//   this.horns = obj.horns;
+//   allHorns2.push(this);
+// }
+// pageTwoDataSet.forEach( pageTwo=>  {
+//   new AnimalTwo(pageTwo);
+// })
+
+// // render prototype to render each object instance to the page using mustache
+
+// AnimalTwo.prototype.toHtml = function(){
+//   // 1. Get the template from the html
+//   let template = $('#gallery-template').html();
+
+//   // 2. Use Mustache to "render" new html by merging the template with the data
+//   let html = Mustache.render(template, this);
+
+//   // 3. Return the "html"  from this method
+//   return html;
+// }
+// allHorns2.forEach(AnimalTwo => {
+//   // this will create the html
+//   let AnimalTwoHtml = AnimalTwo.toHtml();
+
+//   // append to page
+//   $('#gallery2').append(AnimalTwoHtml);
+// })
