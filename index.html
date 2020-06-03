@@ -8,13 +8,18 @@
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/modules.css" />
+
+  
 </head>
+
 <body>
   <header>
     <h1>Gallery of Horns</h1>
+    <h2><a href="page2.html">second page</a></h2>
     <select id="dropdown-template">
-      <option value="default"> Keywords</option>
+      <option value="default">Keywords</option>
     </select>
+
   </header>
   <main id="horns-images">
     <section id="horns-template">
@@ -23,8 +28,21 @@
       <p></p>
     </section>
 
+    <!-- <section id="gallery2">
+      <div class="template">
+        <h2 class="title"></h2>
+        <p class="description"></p>
+        <img src="" alt=" ">
+        <p class="keyword"></p>
+        <p class="horns"></p>
+      </div>
+    </section> -->
+
   </main>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://unpkg.com/mustache@latest"></script>
+  <script src="data/page-1.json"></script> 
+  <!-- <script src="data/page-2.json"></script>  -->
 
   <script type="text/javascript" src="js/app.js"></script>
 </body>

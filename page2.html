@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery of Horns</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/modules.css" />
+
+  <!-- Begin/Build the demo without this template. Build it as we refactor (Demo part 3) -->
+  
+  <script id="gallery-template" type="text/x-tmpl-mustache">
+    <section>
+      <h2>{{title}}</h2>
+      <p>description: {{description}}</p>
+      <img src="{{image_url}}">
+      <p>keyword: {{keyword}}</p>
+      <p>horns: {{horns}}</p>
+    </section>
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1>Gallery of Horns</h1>
+    <h2><a href="index.html">second page</a></h2>
+    <select id="dropdown-template">
+      <option value="default">Keywords</option>
+    </select>
+
+  </header>
+  <main id="gallery2">
+    <section id="horns-template">
+      <h2></h2>
+      <img src="" alt="">
+      <p></p>
+    </section>
+
+    <section> 
+      <div class="template">
+        <h2 class="title"></h2>
+        <p class="description"></p>
+        <img src="" alt=" ">
+        <p class="keyword"></p>
+        <p class="horns"></p>
+      </div>
+    </section>
+
+  </main>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://unpkg.com/mustache@latest"></script>
+  <!-- <script src="data/page-1.json"></script> -->
+  <script src="data/page-2.json"></script>
+
+  <script type="text/javascript" src="js/page2.js"></script>
+</body>
+
+</html>
