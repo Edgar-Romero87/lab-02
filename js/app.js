@@ -2,7 +2,7 @@
 
 let allHorns = [];
 let keyword = [];
-const myTemplate = $('#horns-template').html();
+
 
 function Animals(obj){
   this.image_url = obj.image_url;
@@ -15,9 +15,9 @@ function Animals(obj){
 
 Animals.prototype.render = function (){
 
-  
+  const myTemplate = $('#horns-template').html();
 
-  const $newSection = $(`<section>${myTemplate}</section>`);
+  const $newSection = $(`<section class=${this.keyword}>${myTemplate}</section>`);
 
   $newSection.find('img').attr('src', this.image_url);
 
@@ -33,26 +33,15 @@ Animals.prototype.render = function (){
   $('main').append($newSection);
 
 }
-//the ajax to pull the JSON 
-$.ajax('data/page-1.json', {method: 'GET', dataType: 'JSON'})
-  .then(creatures => {
 
-    creatures.forEach(value =>{
-      new Animals(value).render();
-    })
-    getKeywords();
-    dropDown();
-    // event();
-  })
-
-  //fill the keyword array
+//fill the keyword array
 const getKeywords = () =>{
   allHorns.forEach(beast => {
     keyword.push(beast.keyword);
   })
 }
 
-//fill the
+//fill the dropdown menu with the keywords of each image
 const dropDown = () => {
   let unique = [];
   keyword.forEach(beast => {
@@ -65,29 +54,26 @@ const dropDown = () => {
     
   })
 }
-//Event listener
-$('select').on('click', function(event){
-  event.preventDefault();
-  if (val !== 'default'){
-    $('main').empty();
+//the ajax to pull the JSON 
+$.ajax('data/page-1.json', {method: 'GET', dataType: 'JSON'})
+  .then(creatures => {
 
-    allHorns.forEach(value => {
-      if($(this).value() === value.keyword){
-        value.render();
-      }
-    });
+    creatures.forEach(value =>{
+      new Animals(value).render();
+    })
+    getKeywords();
+    dropDown();
+})
 
-  } else {
-    $('main').empty();
-    allHorns.forEach(value => value.render());
-  }
-});
+//we need a filter function 
+  //identify what was clicked on
+  //remove everything 
+  //show only what was clicked on
 
-//Option view handler
-// $('options').on('change', function(){
-//     // console.log('inside option choice')  
-//     if($(this).val()) {    
-//       $('section').hide();    
-//       $(`section[keyword="${$(this).val()}"]`).show();  
-//   }
-// });
+function filter(event){
+  let thingIClick = $(this).val();
+  $('section').hide();
+  $(`.${thingIClick}`).show();
+}
+$('#dropdown-template').on('change', filter);
+
