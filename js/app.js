@@ -63,16 +63,30 @@ $.ajax('data/page-1.json', {method: 'GET', dataType: 'JSON'})
     })
     getKeywords();
     dropDown();
+    
 })
-
 //we need a filter function 
-  //identify what was clicked on
-  //remove everything 
-  //show only what was clicked on
+//identify what was clicked on
+//remove everything 
+//show only what was clicked on
 
 function filter(event){
   let thingIClick = $(this).val();
   $('section').hide();
   $(`.${thingIClick}`).show();
+  
 }
 $('#dropdown-template').on('change', filter);
+
+// const imageSorter = (how) => {
+//   if(how === 'title'){
+//     allHorns.sort((a,b) => {
+//       return a.title > b.title ? 1: -1;
+//     });
+//   } else {
+//     allHorns.sort((a,b) => {
+//       return a.horns - b.horns;
+//     });
+//   }
+// }
+// imageSorter();
