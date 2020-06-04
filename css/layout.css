@@ -1,0 +1,32 @@
+
+h1{
+  text-align: center;
+  padding: 10px;
+  font-size: 2em;
+}
+
+  
+main{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+section{
+  width: 400px;
+  height: 400px;
+}
+
+img{
+  max-width: 400px;
+  max-height: 350px;
+  border-radius: 15%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  background-color: antiquewhite;
+}
