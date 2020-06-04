@@ -78,6 +78,7 @@ function filter(event){
 }
 $('#dropdown-template').on('change', filter);
 
+
 // const imageSorter = (how) => {
 //   if(how === 'title'){
 //     allHorns.sort((a,b) => {
@@ -89,4 +90,45 @@ $('#dropdown-template').on('change', filter);
 //     });
 //   }
 // }
+
 // imageSorter();
+// function sortByTitle (arr){
+//   arr.sort( (a,b) => a.title > b.title ? 1 : a.title < b.title ? -1: 0);
+//   return arr;
+// }
+// function sortByHorns (arr){
+//   arr.sort( (a,b) => b.horns - a.horns);
+//   return arr;
+// }
+
+// function titleSortListener() { 
+//   $('#title').click( () => { 
+
+//     Images.list.sort( (a,b) => a.title > b.title ? 1 : a.title < b.title ? -1 : 0);
+//     console.log(Images.list);
+//     clearAllImages();
+//     displayAllImages();
+//   })
+// }
+
+// function hornSortListener() { 
+//   $('#horn').click( () => { 
+//     Images.list.sort( (a,b) => a.horns > b.horns ? 1 : a.horns < b.horns ? -1 : 0);
+//     console.log(Images.list);
+//     clearAllImages();
+//     displayAllImages();
+//   })
+// }
+
+// function displayAllImages() { 
+//   const photoTemplate = $('#photo-template').html();
+//   const photoTemplateScript = Handlebars.compile(photoTemplate);
+//   Images.list.forEach(object => {
+//     const image = {'title': object.title, 'image_url': object.image_url, 'description': object.description, 'keyword': object.keyword};
+//     const html = photoTemplateScript(image);
+//     $('main').append(html);
+//   })
+// }
+
+// function clearAllImages() { 
+//   $('section').remove();
